@@ -23,7 +23,7 @@
         },
         "DATABASE": {
             "description": "get from mongo",
-            "required": true
+            "required": false
         },
         "CHANNEL_ID": {
             "description": "frwd channel msg to @idgetdcbot and reply with id cmd",
