@@ -2,7 +2,7 @@
 
 Temp mail bot. It is generate a temporary mail for you by api
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy/https://github.com/redaiq90/TempMailDcBot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/redaiq90/TempMailDcBot)
  
 Do you want to make like this!?
 
