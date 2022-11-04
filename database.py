@@ -3,10 +3,10 @@ import os
 from motor.motor_asyncio import AsyncIOMotorClient
 
 DATABASE = false #os.environ["DATABASE"]
-
-mongo_client = AsyncIOMotorClient(DATABASE)
-db = mongo_client.users
-userdb = db.users
+if DATABASE:
+    mongo_client = AsyncIOMotorClient(DATABASE)
+    db = mongo_client.users
+    userdb = db.users
 
 #===================== User database ================================
 
