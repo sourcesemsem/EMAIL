@@ -2,7 +2,7 @@
 import os
 from motor.motor_asyncio import AsyncIOMotorClient
 
-DATABASE = os.environ["DATABASE"]
+DATABASE = false #os.environ["DATABASE"]
 
 mongo_client = AsyncIOMotorClient(DATABASE)
 db = mongo_client.users
@@ -11,10 +11,11 @@ userdb = db.users
 #===================== User database ================================
 
 async def is_served_user(user_id: int) -> bool:
-    user = await userdb.find_one({"bot_users": user_id})
-    if not user:
-        return False
-    return True
+    if DATABASE:
+        user = await userdb.find_one({"bot_users": user_id})
+        if not user:
+            return False
+        return True
 
 async def get_served_users() -> list:
     users = userdb.find({"bot_users": {"$gt": 0}})
@@ -26,10 +27,11 @@ async def get_served_users() -> list:
     return users_list
 
 async def add_served_user(user_id: int):
-    is_served = await is_served_user(user_id)
-    if is_served:
-        return
-    return await userdb.insert_one({"bot_users": user_id})
+    if DATABASE:
+        is_served = await is_served_user(user_id)
+        if is_served:
+            return
+        return await userdb.insert_one({"bot_users": user_id})
 
 async def remove_served_user(user_id: int):
     is_served = await is_served_user(user_id)
@@ -55,10 +57,11 @@ async def is_served_chat(chat_id: int) -> bool:
     return True
 
 async def add_served_chat(chat_id: int):
-    is_served = await is_served_chat(chat_id)
-    if is_served:
-        return
-    return await userdb.insert_one({"chat_id": chat_id})
+    if DATABASE:
+        is_served = await is_served_chat(chat_id)
+        if is_served:
+            return
+        return await userdb.insert_one({"chat_id": chat_id})
 
 async def remove_served_chat(chat_id: int):
     is_served = await is_served_chat(chat_id)
