@@ -46,7 +46,7 @@ I can create **temp emails** for you. Send /new to **create new mail** !
 
 Send /domains to get list of Available Domains.
 
-**Developer** : @selfiebd | @Groupdcbots 
+**Developer** : @jepthon
 """
 
 CHANNEL_ID = int(os.environ['CHANNEL_ID'])
@@ -56,11 +56,11 @@ OWNER = int(os.environ['OWNER'])
 start_button = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("👥 Group", url="https://t.me/Groupdcs"),
-                    InlineKeyboardButton("🗣 Channel", url="https://t.me/Groupdcbots")
+                    InlineKeyboardButton("👥 Group", url="https://t.me/jepthonsupport"),
+                    InlineKeyboardButton("🗣 Channel", url="https://t.me/jepthon")
                 ],
 		        [
-                    InlineKeyboardButton("➕ Add to Your Group ➕", url=f"http://t.me/TempMailDcBot?startgroup=new"),
+                    InlineKeyboardButton("➕ Add to Your Group ➕", url=f"http://t.me/Lcptx_bot?startgroup=new"),
                 ]    
             ]
 )
@@ -73,8 +73,8 @@ async def start(_, message: Message):
        await app.send_message(
 			chat_id=message.from_user.id,
 			text=f"""
-🚧 **Access Denied** {message.from_user.mention}
-You must,
+🚧 **لا يمكنك استعمال البوت** {message.from_user.mention}
+حتى تشترك بالقناة أولاً,
 🔹[join Our Telegram Channel](https://t.me/{CHANNEL}).
 """)
        return
@@ -117,7 +117,7 @@ async def fakemailgen(_, message: Message):
 **📬 Done,Your Email Address Created!**
 📧 **Email** : `{email}@{domain}`
 📨 **Mail BOX** : `empty`
-♨️ **Powered by** : @groupdcbots """,
+♨️ **Powered by** : @jepthon """,
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("♻️ Update Mail BOX ♻️", callback_data = f"mailbox |{email}|{domain}")]]))
     pi = await mes.pin(disable_notification=True, both_sides=True)
     await m.delete()
