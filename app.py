@@ -46,7 +46,7 @@ I can create **temp emails** for you. Send /new to **create new mail** !
 
 Send /domains to get list of Available Domains.
 
-**Developer** : @jepthon
+**Developer** : @FTTUTY
 """
 
 CHANNEL_ID = int(os.environ['CHANNEL_ID'])
@@ -56,8 +56,8 @@ OWNER = int(os.environ['OWNER'])
 start_button = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("👥 Group", url="https://t.me/jepthonsupport"),
-                    InlineKeyboardButton("🗣 Channel", url="https://t.me/jepthon")
+                    InlineKeyboardButton("👥 Group", url="https://t.me/FTTUTT0"),
+                    InlineKeyboardButton("🗣 Channel", url="https://t.me/FTTUTY")
                 ],
 		        [
                     InlineKeyboardButton("➕ Add to Your Group ➕", url=f"http://t.me/Lcptx_bot?startgroup=new"),
@@ -99,7 +99,7 @@ API3='https://www.1secmail.com/api/v1/?action=readMessage&login='
 #********************************************************************************
 
 create = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("Groupdcbots ⚡", url="https://t.me/groupdcbots")]])
+            [[InlineKeyboardButton("Groupdcbots ⚡", url="FTTUTY")]])
 
 #********************************************************************************
 @app.on_message(filters.command("new"))
@@ -117,7 +117,8 @@ async def fakemailgen(_, message: Message):
 **📬 Done,Your Email Address Created!**
 📧 **Email** : `{email}@{domain}`
 📨 **Mail BOX** : `empty`
-♨️ **Powered by** : @jepthon """,
+♨️ **Powered by** : @FTTUTY`
+👨‍💻 **DEV** : @DEV_SAMIR """,
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("♻️ Update Mail BOX ♻️", callback_data = f"mailbox |{email}|{domain}")]]))
     pi = await mes.pin(disable_notification=True, both_sides=True)
     await m.delete()
@@ -157,7 +158,7 @@ async def mail_box(_, query : CallbackQuery):
 **📬 Done,Your Email Address Created!**
 📧 **Email** : `{smail}`
 📨 **Mail BOX** : ✅
-**♨️ Powered by** : @Groupdcbots""",
+**♨️ Powered by** : @FTTUTY""",
 reply_markup = mbutton
 )   
         except bad_request_400.MessageNotModified as e:
