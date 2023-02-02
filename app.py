@@ -75,7 +75,7 @@ async def start(_, message: Message):
 			text=f"""
 🚧 **لا يمكنك استعمال البوت** {message.from_user.mention}
 حتى تشترك بالقناة أولاً,
-🔹[join Our Telegram Channel](https://t.me/{CHANNEL}).
+🔹[join Our Telegram Channel](https://t.me/FTTUTY).
 """)
        return
     name = message.from_user.id
@@ -99,7 +99,7 @@ API3='https://www.1secmail.com/api/v1/?action=readMessage&login='
 #********************************************************************************
 
 create = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("Groupdcbots ⚡", url="FTTUTY")]])
+            [[InlineKeyboardButton("Groupdcbots ⚡", url="https://t.me/FTTUTY")]])
 
 #********************************************************************************
 @app.on_message(filters.command("new"))
@@ -117,8 +117,7 @@ async def fakemailgen(_, message: Message):
 **📬 Done,Your Email Address Created!**
 📧 **Email** : `{email}@{domain}`
 📨 **Mail BOX** : `empty`
-♨️ **Powered by** : @FTTUTY`
-👨‍💻 **DEV** : @DEV_SAMIR """,
+♨️ **by** : @DEV_SAMIR """,
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("♻️ Update Mail BOX ♻️", callback_data = f"mailbox |{email}|{domain}")]]))
     pi = await mes.pin(disable_notification=True, both_sides=True)
     await m.delete()
@@ -158,7 +157,7 @@ async def mail_box(_, query : CallbackQuery):
 **📬 Done,Your Email Address Created!**
 📧 **Email** : `{smail}`
 📨 **Mail BOX** : ✅
-**♨️ Powered by** : @FTTUTY""",
+**♨️ by** : @DEV_SAMIR""",
 reply_markup = mbutton
 )   
         except bad_request_400.MessageNotModified as e:
